@@ -67,6 +67,20 @@ const genGlobalStyle = ({ token }: { prefixCls: string; token: Theme }) => css`
     -webkit-app-region: no-drag;
   }
 
+/* Empêche le zoom auto iOS/Android au focus : tout input avec un
+     font-size calculé < 16px le déclenche. Appliqué sans condition car le
+     "mode bureau" annonce un viewport plus large, donc une media query
+     mobile-only raterait justement ce cas. */
+  input,
+  textarea,
+  select,
+  .${token.prefixCls}-input,
+  .${token.prefixCls}-input-affix-wrapper,
+  .${token.prefixCls}-select-selector,
+  .${token.prefixCls}-input-number-input {
+    font-size: 16px !important;
+  }
+  
   .${CLASSNAMES.ContextTrigger}[data-popup-open]:not([data-no-highlight]),
   .${CLASSNAMES.DropdownMenuTrigger}[data-popup-open]:not([data-no-highlight]) {
     background: ${token.colorFillTertiary};
