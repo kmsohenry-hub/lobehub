@@ -574,7 +574,7 @@ const InputEditor = memo<{
           )
         }
         style={{
-          fontSize: mobile ? 16 : undefined,
+          fontSize: 16,
           minHeight: defaultRows > 1 ? defaultRows * 23 : undefined,
         }}
         onCompositionEnd={({ event }) => compositionProps.onCompositionEnd(event)}
