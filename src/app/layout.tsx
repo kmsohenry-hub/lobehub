@@ -21,6 +21,16 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
         />
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              input, textarea, select {
+                font-size: 16px !important;
+                touch-action: manipulation;
+              }
+            `,
+          }}
+        />
       </head>
       <body style={{ height: '100%', margin: 0 }}>
         {children}
