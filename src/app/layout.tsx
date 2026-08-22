@@ -24,9 +24,9 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
         <style
           dangerouslySetInnerHTML={{
             __html: `
-              input, textarea, select {
+              /* Bloque le zoom automatique du clavier sur mobile */
+              input, textarea, select, [contenteditable="true"], .ant-input {
                 font-size: 16px !important;
-                touch-action: manipulation;
               }
             `,
           }}
